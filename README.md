@@ -1,66 +1,32 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+ 
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## รายละเอียดโปรเจกต์:
 
-## About Laravel
+เป็นระบบที่ช่วยให้ผู้ใช้สามารถตรวจสอบผลรางวัลล็อตเตอรี่ที่ออกในรูปแบบของเลขเด็ดหรือเลขที่พวกเขาซื้อลอตเตอรี่ไปแล้วว่าถูกรางวัลหรือไม่ ระบบนี้ถูกพัฒนาเพื่อให้ผู้ใช้งานสามารถตรวจสอบรางวัลจากฐานข้อมูลที่เก็บไว้ ซึ่งจะมีการจัดเก็บเลขรางวัลที่ชนะตามประเภทต่าง ๆ เช่น รางวัลที่ 1, รางวัลที่ 2, เลขท้าย 2 ตัว, และเลขข้างเคียง
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ฟีเจอร์หลักของโปรเจกต์:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+1. ตรวจสอบผลรางวัล: ระบบจะตรวจสอบเลขลอตเตอรี่ของผู้ใช้และเปรียบเทียบกับรางวัลที่ออก โดยผู้ใช้จะสามารถป้อนเลขลอตเตอรี่ได้ และระบบจะบอกผลรางวัลที่ตรงกันได้ในทันที
+2. แสดงผลรางวัล: หากเลขของผู้ใช้ตรงกับรางวัล ระบบจะแสดงประเภทรางวัล เช่น รางวัลที่ 1, รางวัลที่ 2, หรือรางวัลเลขท้าย 2 ตัว
+3. บันทึกข้อมูลใน Session: ระบบจะเก็บข้อมูลเลขลอตเตอรี่ที่ผู้ใช้ป้อนไว้ใน Session เพื่อให้สามารถแสดงผลรางวัลได้อย่างต่อเนื่องแม้ผู้ใช้รีเฟรชหน้า
+4. สุ่มรางวัล: ผู้ดูแลระบบสามารถกำหนดรางวัล เช่น เลขที่ออก และเลขข้างเคียงได้ผ่านทางหน้าบริหาร เพื่อให้ผู้ใช้สามารถทดสอบการตรวจสอบได้
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## วัตถุประสงค์:
+1. ช่วยให้ผู้ใช้งานสามารถตรวจสอบผลรางวัลล็อตเตอรี่ได้อย่างง่ายดายและรวดเร็ว
+2. เก็บข้อมูลผลรางวัลในรูปแบบที่ช่วยให้ผู้ใช้งานสามารถตรวจสอบย้อนหลังได้
+3. เพิ่มความสะดวกสบายให้กับผู้ใช้งานที่ต้องการตรวจสอบว่าพวกเขาถูกรางวัลหรือไม่ โดยไม่ต้องตรวจสอบจากแหล่งอื่น
 
-## Learning Laravel
+## Project Description:
+The project is a system designed to help users check the results of lottery numbers they have purchased to see if they have won any prizes. This system stores winning numbers and allows users to input their lottery numbers, comparing them against the winning numbers to determine if they match any prize categories such as the 1st prize, 2nd prize, last two digits, or adjacent prizes.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Key Features:
+1. Prize Checking: Users can enter their lottery numbers, and the system will compare them with the winning numbers to identify if they match any prize categories.
+2. Result Display: If the user's number matches any prize, the system displays the relevant prize type, such as the 1st prize, 2nd prize, or last two digits.
+3. Session Storage: The system stores the user's ticket number in the session to ensure that the results remain visible even after page refreshes.
+4. Prize Generation: Admins can define winning numbers and categories, allowing users to test and verify their lottery numbers with the generated prizes.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Purpose:
+1. To provide users with an easy and convenient way to check their lottery numbers and determine if they have won.
+2. To store historical prize data, enabling users to check past results.
+3. To improve user experience by offering a straightforward, efficient tool for lottery number verification.
