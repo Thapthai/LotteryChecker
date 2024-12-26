@@ -70,22 +70,21 @@ class LotteryController extends Controller
 
         if ($ticketNumber === $prizeTable['prize1']) {
             $prizes[] = 'ถูกรางวัลที่ 1';
-            $details['prize1'] = $prizeTable['prize1']; // กำหนดค่าให้เป็น array
+            $details['prize1'] = $prizeTable['prize1'];
         }
         if (in_array($ticketNumber, $prizeTable['prize2'])) {
             $prizes[] = 'ถูกรางวัลที่ 2';
-            $details['prize2'] = $prizeTable['prize2']; // ใช้ implode เพื่อให้เป็น array
+            $details['prize2'] = $prizeTable['prize2']; 
         }
         if (in_array($ticketNumber, $prizeTable['adjacentPrize'])) {
             $prizes[] = 'ถูกรางวัลเลขข้างเคียง';
-            $details['adjacentPrize'] = $prizeTable['adjacentPrize']; // ใช้ implode เพื่อให้เป็น array
+            $details['adjacentPrize'] = $prizeTable['adjacentPrize'];
         }
         if (substr($ticketNumber, -2) === $prizeTable['lastTwoDigitsPrize']) {
             $prizes[] = 'ถูกรางวัลเลขท้าย 2 ตัว';
-            $details['lastTwoDigitsPrize'] = $prizeTable['lastTwoDigitsPrize']; // กำหนดค่าให้เป็น array
+            $details['lastTwoDigitsPrize'] = $prizeTable['lastTwoDigitsPrize'];
         }
-
-        // Use implode to ensure the result is a properly formatted string
+ 
         $result = !empty($prizes) ? implode(' และ ', $prizes) : 'เสียใจด้วย คุณไม่ถูกรางวัล';
 
         return back()->with(compact('result', 'details', 'ticketNumber'));
